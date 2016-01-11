@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clio Legal Practice Management Software</title>
+    <!-- SYSTEM INCLUDES - DO NOT EDIT -->
+    <?php echo $mContext['headElements']; ?>
+    
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="//files.goclio.com/marketo/library/lp/template/stylesheets/app.css" />
+    <link rel="stylesheet" href="//files.goclio.com/marketo/library/lp/template/stylesheets/main.css" />
+    <!-- <link rel="stylesheet" href="stylesheets/main.css" /> -->
+    <!--[if lt IE 9]>
+      <style type="text/css">
+        * html div.row{ 
+          width: expression( document.body.clientWidth > 999 ? "1000px" : "auto" ); /* sets max-width for IE */
+        }
+        div.row { 
+          max-width: 1000px; /* this sets the max-width value for all standards-compliant browsers */
+        }  
+      </style>
+      <link rel="stylesheet" href="//files.goclio.com/marketo/library/lp/template/stylesheets/ie8-and-up.css" />
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+      <script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+      <script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//files.goclio.com/marketo/library/lp/template/bower_components/modernizr/modernizr.js"></script>
+
+    <!-- SYSTEM JAVASCRIPT - DO NOT EDIT -->
+    <script type="text/javascript">
+    function fieldValidate(field) {
+      /* call Mkto.setError(field, message) and return false to mark a field value invalid */
+      /* return 'skip' to bypass the built-in validations */
+      return true;
+    }
+    function getRequiredFieldMessage(domElement, label) {
+      return "This field is required";
+    }
+    function getTelephoneInvalidMessage(domElement, label) {
+      return "Please enter a valid telephone number";
+    }
+    function getEmailInvalidMessage(domElement, label) {
+      return "Please enter a valid email address";
+    }
+    </script>
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1298171-1']);
+      _gaq.push(['_setDomainName', 'goclio.com']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </head>
+   
+  <body id="bodyId" class="sem-page">
+        
+    <div id="outerWrapDiv">
+    <div id="innerWrapDiv">
+
+    <!-- START TEMPLATE HTML - EDIT THIS SECTION -->
+    <div id="mktContent" class="mktEditable">
+    <!-- Base of Landing Page Content -->
+      <header>
+        <div class="branding-container">
+          <div class="logo-container">
+            <img src="//files.goclio.com/marketo/library/lp/template/img/logo-w.png" alt="Clio" width="92" height="40" class="logo">
+          </div>
+          <div class="title-container">
+            <h1 class="title"><em>Legal Practice Management Software</em> </h1>
+          </div>
+        </div>
+      </header> 
+
+      <!-- PRIMARY SECTION -->
+      <section class="primary hero-section yellow-bg ">
+        <div class="row">
+          <div class="small-12 small-centered medium-uncentered medium-7 columns">
+            <h2 class="title">Time is money.<br> Clio saves you both.</h2>
+          </div>
+          <div class="small-12 small-centered medium-uncentered medium-4 columns">
+            <img src="//files.goclio.com/marketo/library/lp/template/img/piggybank2.png" width="210" height="312" alt="Time is money. Clio saves you both.">
+          </div>
+        </div>
+      </section>
+      <section class="white-bg primary">
+        <div class="row">
+          <div class="small-12 small-centered large-uncentered large-6 columns">
+            <h3>Clio legal practice software saves thousands of lawyers 8 hours each week.</h3>
+            <p>Clio’s legal software tools streamline time tracking, billing and document management by enabling easy collaboration and process automation.</p>
+            <p>Thousands of lawyers in over 50 countries have discovered the time saving benefits of Clio; why not join them?</p>
+            <a href="https://app.goclio.com/signup" title="Try Clio for free now!" class="btn-green submit-cta">Try Clio for free now!</a>
+          </div>
+          <div class="small-12 small-centered large-uncentered large-6 columns">
+            <form accept-charset="UTF-8" action="https://clio-23602-external-signup.beta.clio.com/marketing_signup" id="clio_signup_form" method="post" name="clio_signup_form" novalidate="" class="form-box">
+                        <!-- <form accept-charset="UTF-8" action="#" id="clio_signup_form" method="post" name="clio_signup_form" novalidate=""> -->
+                            <!-- set your callback URL here -->
+                            <input id="clio_signup_callback_url" name="signup[callback_url]" type="hidden" value="http://localhost:3002/marketing_signup_callback"> <!-- 0 => "US", 1 => "UK", 2 => "EU" -->
+                            <input id="clio_region_code" name="marketing_tracker[region_code]" type="hidden" value="0"> <!-- 2 => Loyalty, 3 => Starter, 4 => Boutique, 5 => Elite -->
+                            <input id="clio_al_subscription_plan_code" name="marketing_tracker[al_subscription_plan_code]" type="hidden" value="4">
+                            <h3>Sign up for Clio</h3>
+                            
+                              
+                            <div class="row">  
+                              <div class="small-12 columns">
+                                  <label for="clio_signup_first_name">First Name:</label>
+                                 <input id="clio_signup_first_name" name="signup[first_name]" required="" type="text" minlength="2">  
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <label for="clio_signup_last_name">Last Name:</label>
+                                  <input id="clio_signup_last_name" name="signup[last_name]" required="" type="text" minlength="2"> 
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <label for="clio_signup_email">Email:</label>
+                                  <input id="clio_signup_email" name="signup[email]" required="" type="email"> 
+                              </div>
+                            </div> 
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <label for="clio_user_password">Password:</label>
+                                  <input type="password" name="user[password]" id="clio_user_password" size=20 required maxlength="20"> 
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <label for="clio_signup_phone_number">Phone number:</label>
+                                  <input id="clio_signup_phone_number" name="signup[phone_number]" required="" type="text" placeholder="eg. +1 234 567 8900">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns signup-form__promo-link">
+                                  <a href="#" id="clio_promo_link" class="form-text">I have a promo or referral code</a>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns signup-form__code" style="display: none;">
+                                  <label for="clio_marketing_tracker_promotional_code">Promotional code:</label>
+                                  <input id="clio_marketing_tracker_promotional_code" name="marketing_tracker[promotional_code]" type="text">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns signup-form__code" style="display: none;">
+                                  <label for="clio_marketing_tracker_referral_code">Referral code:</label>
+                                  <input id="clio_marketing_tracker_referral_code" name="marketing_tracker[referral_code]" type="text">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <span class="form-text">By creating an account, you are agreeing to our <a href="http://www.goclio.com/legal/tos/" target="_blank">Terms of Service</a> and <a href="http://www.goclio.com/legal/privacy/" target="_blank">Privacy Policy</a></span>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns casl_row">
+                                  <label for="signup_casl"><input type="checkbox" id="signup_casl" name="signup[casl_opt_in]">
+                                  Yes, send me news and updates from Clio</label>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <input id="submit" type="submit" value="Sign Up">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="small-12 columns">
+                                  <span class="form-text">Questions? Give us a call. 1.888.858.CLIO</span>
+                              </div>
+                            </div>
+                        </form>
+          </div>
+        </div>
+      </section>
+      <!-- end PRIMARY SECTION -->
+
+      <!-- VIDEO FULL WIDTH SECTION -->
+      <section class="video-full-width">
+        <h2>
+          Raphael uses Clio
+          <span>and spends the time he saves<br>maintaining his awesome garden.</span>
+        </h2>
+        <button class="play play1">&nbsp;</button>
+        <div class="video-wrap">
+          <iframe src="//player.vimeo.com/video/85395625?api=1&amp;player_id=player1" id="player1" frameborder="0" autoplay="1" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" data-video-name="My Clioday"></iframe>
+        </div>
+      </section>
+
+      <!-- FEATURES SECTION 3 COLUMNS -->
+      <section class="white-bg features multi">
+        <div class="row">
+          <div class="small-12 small-centered medium-12 columns">
+            <h2 class="title">Features</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 medium-4 large-4 columns feature-box-gray">
+             <h3 class="">Time Tracking</h3>
+            <img src="//files.goclio.com/marketo/library/lp/template/img/time.png" alt="One-click billing" width="250" height="250">
+            <p>Tracking time has never been so easy. Start a timer with a single click from any device, whether you’re on the go or in the office.</p>
+          </div>
+          <div class="small-12 medium-4 large-4 columns feature-box-white">
+            <h3>Client Collaboration</h3>
+            <img src="//files.goclio.com/marketo/library/lp/template/img/collaboration.png" alt="Effective Collaboration" width="250" height="250">
+            <p>Deliver outstanding service to your clients without being tied to your desk. Collaborate across platforms and devices so you and your client don’t miss a beat.</p>
+          </div>
+          <div class="small-12 medium-4 large-4 columns feature-box-gray">
+             <h3 class="">Easy Calendaring</h3>
+            <img src="//files.goclio.com/marketo/library/lp/template/img/calendar.png" alt="Time tracking" width="250" height="250">
+            <p>We can’t promise that you’ll never be late to another meeting, but with Clio you’ll have your daily, weekly and monthly meetings at your fingertips, no matter where you are.</p>
+          </div>
+        </div>
+      </section>
+      <!-- end FEATURES SECTION -->
+
+      <!-- TESTIMONIAL SECTION -->
+      <section class="dark-bg testimonial">
+        <div class="row">
+          <div class="small-12 small-centered medium-12 columns">
+            <div class="circle">
+              <figure></figure>
+            </div>
+            <blockquote>Worth every penny!<br><br> Being a solo practitioner, I was looking for a comprehensive system that I could access from anywhere, even my iPhone. However, the number one reason that I have switched to Clio is their technical support. To see your comments and/or suggestions (that are so easy to submit) updated and incorporated within the system within hours is worth every penny!</blockquote>
+            <span class="person-quoted">Melanie C. Leonard,</span>
+            <span class="location">Law Office of Melanie C. Leonard, P.C.</span>
+          </div>
+        </div>
+      </section>
+      <!-- end TESTIMONIAL SECTION -->
+
+      <footer>
+        <div class="row">
+          <div class="small-12 large-6 columns">
+            <div class="copyright">
+              <img src="//files.goclio.com/marketo/library/lp/template/img/footer-logo.png" alt="Clio">
+              <span>© 2014 Themis Solutions Inc. Proudly made in Vancouver.</span><br>
+              
+            </div> 
+          </div>
+          <div class="small-12 large-6 columns">
+            <div class="small-12 large-9 columns">
+              <div class="menu-footer-container">
+                <ul id="menu-footer" class="menu">
+                  <li><a href="//www.goclio.com/contact/">Contact</a></li>
+                  <li><a href="//www.goclio.com/privacy/">Privacy Policy</a></li>
+                  <li><a href="//www.goclio.com/tos/">Terms of Service</a></li>
+                </ul>
+              </div> 
+            </div>
+            <div class="small-12 large-3 columns">
+              <div class="social">
+                <a class="fb" href="https://www.facebook.com/GoClio?ref=br_tf" target="_blank"><span class="fa fa-facebook"></span></a>
+                <a class="twitter" href="https://twitter.com/goclio" target="_blank"><span class="fa fa-twitter"></span></a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </footer> 
+
+    <!-- THIS IS WHERE ALL YOUR DYNAMIC CONTENT COMES IN! -->
+    <?php echo $mContext['bodyElements']; ?>
+    <!-- THIS IS WHERE ALL YOUR DYNAMIC CONTENT STOP COMING IN! -->
+
+    </div><!-- /#mktContent -->
+    <!-- END TEMPLATE HTML -->
+
+    <!-- SYSTEM FOOTER - DO NOT EDIT -->
+    </div><!-- /#innerWrapDiv -->
+    </div><!-- /#outerWrapDiv -->
+    <?php echo $mContext['endElements']; ?>
+
+    <script src="//files.goclio.com/marketo/library/lp/template/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="//files.goclio.com/marketo/library/lp/template/bower_components/foundation/js/foundation.min.js"></script>
+    <script src="//files.goclio.com/marketo/library/lp/template/js/froogaloop2.min.js"></script>
+    <script src="//files.goclio.com/marketo/library/lp/template/js/jquery.validate.min.js"></script>
+    <script src="//files.goclio.com/marketo/library/lp/template/js/app.js"></script>
+  <script src="//files.goclio.com/marketo/library/lp/template/js/mktutils.js"></script>
+
+  </body>
+</html>

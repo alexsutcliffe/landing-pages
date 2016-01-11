@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="no-js signup-lp" lang="en">
+    <head>
+        <meta name="robots" content="noindex">
+        <script src="//cdn.optimizely.com/js/202448466.js"></script>
+        <script src="//js.maxmind.com/js/apis/geoip2/v2.0/geoip2.js"></script>
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Clio Legal Practice Management Software</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="//landing.goclio.com/rs/themissolutionsinc/images/favicon.ico">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//files.goclio.com/marketo/library/lp/clio/assets/css/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="//app-sj01.marketo.com/js/forms2/js/forms2.js"></script>
+    </head>
+    <body>
+        <div class="mktoContent">
+            <header>
+                <div class="container">
+                    <div class="branding">
+                        <figure class="logo">
+                            <a href="http://goclio.com" title="Clio Homepage" target="_blank"><img src="https://files.goclio.com/marketo/library/lp/clio/assets/img/clio-logo-white.png" alt="Clio" width="113" height="48"></a>
+                        </figure>
+                        <div class="clio-title">
+                            Legal Practice Management Software
+                        </div>
+                    </div>
+                    <div class="hero-title">
+                        <h1>Time is money. Clio saves you both.</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="main">
+               <aside>
+                    <div>
+                        <form accept-charset="UTF-8" action="https://staging.goclio.com/marketing_signup" id="clio_signup_form" method="post" name="clio_signup_form" novalidate="">
+                            <!-- set your callback URL here -->
+                            <input id="clio_signup_callback_url" name="callback_url" type="hidden" value="https://landing.goclio.com/test-thank-you.html"> <!-- 0 => "US", 1 => "UK", 2 => "EU" -->
+                            <input id="clio_region_code" name="marketing_tracker[region_code]" type="hidden" value="0"> <!-- 2 => Loyalty, 3 => Starter, 4 => Boutique, 5 => Elite -->
+                            <input id="clio_al_subscription_plan_code" name="marketing_tracker[al_subscription_plan_code]" type="hidden" value="4">
+                            <h2>Sign up for Clio</h2>
+                            <div class="formRow">
+                                <label for="clio_signup_first_name">First Name:</label>
+                               <input id="clio_signup_first_name" name="signup[first_name]" type="text">  
+                            </div>
+                            <div class="formRow">
+                                <label for="clio_signup_last_name">Last Name:</label>
+                                <input id="clio_signup_last_name" name="signup[last_name]" type="text"> 
+                            </div>
+                            <div class="formRow">
+                                <label for="clio_signup_email">Email:</label>
+                                <input id="clio_signup_email" name="signup[email]" type="email"> 
+                            </div>
+                            <div class="formRow">
+                              <label for="clio_user_password">Password: <span style="color: #ADADAD;">(min 6 - max 40 characters)</span></label>
+                                <input type="password" name="user[password]" id="clio_user_password" size="20"> 
+                            </div>
+                            <div class="formRow">
+                                <label for="clio_signup_phone_number">Phone number:</label>
+                                <input id="clio_signup_phone_number" name="signup[phone_number]" type="text" placeholder="eg. +1 234 567 8900">
+                            </div>
+                            <div class="formRow signup-form__promo-link">
+                                <a href="#" id="clio_promo_link" class="form-text">I have a promo or referral code</a>
+                            </div>
+                            <div class="formRow signup-form__code" style="display: none;">
+                                <label for="marketing_tracker_promotional_code">Promotional code:</label>
+                                <input id="marketing_tracker_promotional_code" name="marketing_tracker[promotional_code]" type="text">
+                            </div>
+                            <div class="formRow signup-form__code" style="display: none;">
+                                <label for="marketing_tracker_referral_code">Referral code:</label>
+                                <input id="marketing_tracker_referral_code" name="marketing_tracker[referral_code]" type="text">
+                            </div>
+                            <div class="formRow">
+                                <span class="form-text">By creating an account, you are agreeing to our <a href="https://www.goclio.com/legal/tos/" target="_blank">Terms of Service</a> and <a href="https://www.goclio.com/legal/privacy/" target="_blank">Privacy Policy</a></span>
+                            </div>
+                            <div class="formRow casl_row">
+                                <label for="signup_casl"><input type="checkbox" id="signup_casl" name="signup[casl_opt_in]">
+                                Yes, send me news and updates from Clio</label>
+                            </div>
+                            <div class="formRow">
+                                <input id="submit" type="submit" value="Sign Up">
+                            </div>
+                            <div class="formRow">
+                                <span class="form-text">Questions? Give us a call. 1.888.858.CLIO</span>
+                            </div>
+                        </form>
+                    </div>
+                    <script type="text/javascript">
+                        (function(){
+                            document.getElementById('clio_promo_link').addEventListener('click', function(e) {
+                                e.preventDefault();
+                                var elements = document.querySelectorAll('.signup-form__code');
+                                for (var i = 0; i < elements.length; i++){
+                                    var element = elements[i];
+                                    element.style.display = 'block';
+                                }
+                                document.querySelectorAll('.signup-form__promo-link')[0].style.display = 'none';
+                            });
+                        })();
+                    </script>
+                </aside>  
+                <section class="content">
+                    <article>
+                        <h2>Clio legal practice software saves thousands of lawyers 8 hours each week.</h2>
+                        <p>Clio’s legal software tools streamline time tracking, billing and document management by enabling easy collaboration and process automation.</p>
+                        <p>Thousands of lawyers in over 50 countries have discovered the time saving benefits of Clio; why not join them?</p>
+                    </article>
+                </section>    
+            </div>
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li><a href="https://www.goclio.com/" target="_blank">&copy; <span class="copy-year"></span> Themis Solutions Inc</a></li>
+                        <li><a href="https://www.goclio.com/tos/" target="_blank">Terms of Services</a></li>
+                        <li><a href="https://www.goclio.com/privacy/" target="_blank">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/GoClio?ref=br_tf" title="Facebook" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a></li>
+                        <li><a href="https://twitter.com/goclio" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://www.linkedin.com/company/385372" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a></li>
+                    </ul>
+                </div>  
+            </footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="//files.goclio.com/marketo/library/lp/clio/assets/js/jquery.validate.min.js"></script>
+            <script src="//files.goclio.com/marketo/library/lp/clio/assets/js/additional-methods.min.js"></script>
+            <script src="assets/js/main.js?v=3.0.0"></script>
+            <script src="//files.goclio.com/marketo/library/lp/clio/assets/js/mktutils.js"></script>
+        </div>
+    </body>
+</html>

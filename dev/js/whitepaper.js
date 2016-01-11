@@ -1,0 +1,1 @@
+// Whitepaper page specific js
