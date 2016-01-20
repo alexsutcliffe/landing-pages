@@ -4,8 +4,22 @@
 */
  
 function saveMarketingInformation() {
+  var hostname = window.location.hostname.replace('www.','');
+  var the_domain = '';
+  
+  switch(hostname){
+    case 'goclio.co.uk':
+      the_domain = '.goclio.co.uk';
+      break;
+    case 'goclio.eu':
+      the_domain = '.goclio.eu';
+      break;
+    default:
+      the_domain = '.goclio.com';
+  }
+
   // var cookie_options = { domain: window.location.host, expires: 90, path: "/" };
-  var cookie_options = { domain: window.location.host, expires: 90, path: "/" };
+  var cookie_options = { domain: the_domain, expires: 90, path: "/" };
   var fields = [
     'gclid',
     'member_id',
