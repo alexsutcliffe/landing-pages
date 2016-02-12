@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js webinar-lp" lang="en">
+    <head>
+        <script src="//cdn.optimizely.com/js/202448466.js"></script>
+        <script src="//js.maxmind.com/js/apis/geoip2/v2.0/geoip2.js"></script>
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Marketo variables -->
+        <meta class="mktoString" id="clioTitle" mktoName="Clio Title" default="{{my.Global-Company-Title}}" allowHtml="true">
+        <meta class="mktoString" id="pageTitle" mktoName="Page Title" default="{{my.Global-Title}}" allowHtml="true">
+        <meta class="mktoString" id="formTitle" mktoName="Form Title" default="{{my.LP-FormCopy}}" allowHtml="true">
+        <title>${clioTitle}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="//landing.goclio.com/rs/themissolutionsinc/images/favicon.ico">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="//files.goclio.com/marketo/library/lp/clio/assets/css/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-1298171-1']);
+          _gaq.push(['_setDomainName', 'goclio.com']);
+          _gaq.push(['_setAllowLinker', true]);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js" charset="utf-8"></script>
+        <script src="//app-sj01.marketo.com/js/forms2/js/forms2.js"></script>
+    </head>
+    <body>
+        <!-- CONVERTRO UNIVERSAL TAG -->
+        <script type="text/javascript">
+        (function(c){var e=document.createElement("script");
+        e.type='text/javascript';e.async=true;
+        e.src='//d1ivexoxmp59q7.cloudfront.net/'+c+'/live.js';
+        var n=document.getElementsByTagName('script')[0];
+        n.parentNode.insertBefore(e,n);})('clio');
+        </script>
+        <!-- END CONVERTRO UNIVERSAL TAG -->
+        <div class="mktoContent">
+            <header>
+                <div class="container">
+                    <div class="branding">
+                        <figure class="logo">
+                            <a href="//goclio.com" title="Clio Homepage" target="_blank"><img src="https://files.goclio.com/marketo/library/lp/clio/assets/img/clio-logo-white.png" alt="Clio" width="113" height="48"></a>
+                        </figure>
+                        <div class="clio-title">
+                            ${clioTitle}
+                        </div>
+                    </div>
+                    <div class="hero-title">
+                        <h1>${pageTitle}</h1>
+                    </div>
+                </div>  
+            </header>
+            <div class="main">
+               <aside>
+                    <h3>${formTitle}</h3>
+                    <div class="mktoForm form-box" id="form" mktoName="Form"></div>
+                    <script>
+                        MktoForms2.whenReady(function (form) {
+                            var $url = window.location.href;
+                            form.onSuccess(function(values, followUpUrl){
+                                _gaq.push(['_trackEvent', 'Lead Data', 'Webinar', + "'" + $url + "'"]);
+                                window.google_trackConversion({
+                                    google_conversion_id: 1050444294, 
+                                    google_conversion_language : "en",
+                                    google_conversion_format : "3",
+                                    google_conversion_color : "ffffff",
+                                    google_conversion_label : "zo9eCNfm41gQhoTy9AM",
+                                    google_remarketing_only : false
+                                });
+                            });    
+                        });
+                    </script>
+                </aside>  
+                <section class="content">
+                    <article class="mktoText" id="mainCopy" mktoName="Main Copy">
+                        {{my.LP-Body}}
+                    </article>
+                </section>    
+            </div>
+            <footer>
+                <div class="copyright">
+                    <ul>
+                        <li><a href="//www.goclio.com/" target="_blank">&copy; <span class="copy-year"></span> Themis Solutions Inc</a></li>
+                        <li><a href="//www.goclio.com/tos/" target="_blank">Terms of Services</a></li>
+                        <li><a href="//www.goclio.com/privacy/" target="_blank">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/GoClio?ref=br_tf" title="Facebook" target="_blank"><i class="fa fa-facebook-official"></i> Facebook</a></li>
+                        <li><a href="https://twitter.com/goclio" title="Twitter" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://www.linkedin.com/company/385372" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square"></i> LinkedIn</a></li>
+                    </ul>
+                </div>  
+            </footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="//files.goclio.com/marketo/library/lp/clio/assets/js/mktutils.js"></script>
+            <script src="//files.goclio.com/marketo/library/lp/clio/assets/js/main.js"></script>
+            <script src="//files.goclio.com/marketo/library/lp/clio/assets/js/webinar.js"></script>
+            <!-- Bizo -->
+            <script type="text/javascript">
+              var _bizo_data_partner_id = "6302";
+            </script>
+            <script type="text/javascript">
+            (function() {
+              var s = document.getElementsByTagName("script")[0];
+              var b = document.createElement("script");
+              b.type = "text/javascript";
+              b.async = true;
+              b.src = (window.location.protocol === "https:" ? "https://sjs" : "http://js") + ".bizographics.com/insight.min.js";
+              s.parentNode.insertBefore(b, s);
+            })();
+            </script>
+            <noscript>
+              <img height="1" width="1" alt="" style="display:none;" src="//www.bizographics.com/collect/?pid=6302&fmt=gif" />
+            </noscript>
+        </div>
+    </body>
+</html>
