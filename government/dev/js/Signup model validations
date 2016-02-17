@@ -1,0 +1,15 @@
+Signup model validations:
+- first name
+  - must be present and must only contain letters, spaces, apostrophes and hyphens
+  - limited to 96 chars
+- last name
+  - must be present and must only contain letters, spaces, apostrophes and hyphens
+  - limited to 96 chars
+- email
+  - must be present and must pass email validation for format
+  - limited to 64 chars
+- phone number
+  - must be present and must be at least 10 chars in NA, 5 in EU
+- password
+  - must be present
+  - between 6 and 40 chars

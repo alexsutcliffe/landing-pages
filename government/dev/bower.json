@@ -1,0 +1,23 @@
+{
+  "name": "wp-theme-gruntified",
+  "version": "1.0.0",
+  "authors": [
+    "Can Tastemel <cantastemel@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.1",
+    "neat": "~1.7.1",
+    "modernizer": "~2.8.2"
+  },
+  "devDependencies": {
+    "jquery-validation": "~1.14.0"
+  }
+}
