@@ -197,24 +197,13 @@ $(function() {
     }
 
 MktoForms2.whenReady(function (form) {
-		$("input:visible, textarea:visible").focus(function() {
+		$("input:visible").focus(function() {
 		  $("label[for='" + this.id + "']").addClass("moveup");
-		}).blur(function() {
-			tmpval = $(this).val();
-	    if(tmpval == '') {
-	       $("label[for='" + this.id + "']").removeClass("moveup");
-	       if($(this).hasClass('mktoInvalid')) {
-	       		$("label[for='" + this.id + "']").css('color','#f74444');
-	       }
-	    } else {
-	    	if($(this).hasClass('mktoValid')) {
-		       	$("label[for='" + this.id + "']").css('color','#A8B2B8');
-		       }
-	    }
 		});
 });
 
-$("#SaDScroll").click(function() {
+
+$("#SaDScroll, #SaDScrollBtn").click(function() {
     $('html, body').animate({
         scrollTop: $("#mktoForm_1705").offset().top
     }, 1000);

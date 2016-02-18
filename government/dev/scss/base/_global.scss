@@ -15,7 +15,7 @@ header{
 	padding: 29px 0;
 	.branding{
 		@include outer-container;
-		padding: 0px 20px 10px 0;
+		padding: 0px 20px 10px 20px;
 		@include media($mobile) {
 			padding: 0px 20px 10px 20px;
 			margin-bottom: 1.5rem;
@@ -455,7 +455,7 @@ div.resource-cover{
 .demo {
 	padding: 4em 0;
 	.form {
-		@include span-columns(6);
+		@include span-columns(6 of 12);
 		@include shift(3);
 		@include media($tablet){
 			@include span-columns(6);
@@ -480,6 +480,7 @@ div.resource-cover{
 				font-size: 16px;
 				z-index: -1;
 				position: absolute;
+				color: #A8B2B8;
 			}
 			textarea {
 				background-color: transparent;
@@ -487,7 +488,7 @@ div.resource-cover{
 				color: $body-color;
 				border: 1px solid $dark-gray;
 				font-size: 16px;
-				padding-left:0!important;
+				margin-top: 36px;
 			}
 			textarea:focus { 
 				outline: none;
@@ -502,9 +503,6 @@ div.resource-cover{
 			textarea.mktoInvalid:focus {
 				border: 0;
 				border: 1px solid $dark-gray;
-			}
-			label[for=Comments__c] {
-			  padding-left:8px!important;
 			}
 			label[for=Comments__c].moveup {
 			  padding-left:0px!important;
@@ -559,11 +557,7 @@ div.resource-cover{
 			}
 			button.mktoButton[type=submit]:hover {
 				background: #005588;
-				border: 1px solid;
-				padding: 12px 40px;
-				border-radius: 4px;
 				color: $white;
-				font-size: 14px;
 				transition: opacity 0.2s ease-in-out;
 			}
 	}
