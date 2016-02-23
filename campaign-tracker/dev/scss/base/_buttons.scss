@@ -1,0 +1,57 @@
+.btn{
+	text-decoration: none;
+	background: $primary;
+	padding: 12px 22px;
+	color: $white;
+	border-radius: 5px;
+	@include transition(all .3s ease-in-out);
+}
+
+// BUTTONS
+
+a.btn {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none; 
+    padding: 1.1rem 2.5rem;
+    font-size: 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+
+	&.btn--ghost-white { 
+		background: transparent;
+    	background-color: transparent;
+	    color: white;
+	    box-shadow:inset 0 0 0 1px white;
+
+	    &:hover{
+			background-color: $white;
+			color: $primary;
+			opacity: 1;
+	    }
+	}
+
+	&.btn--ghost-grey { 
+    	background: transparent;
+    	background-color: transparent;
+	    color: $body-color;
+	    box-shadow:inset 0 0 0 1px $body-color;
+
+	    &:hover{
+		    background-color: $primary;
+		    color: $white;
+		    box-shadow:inset 0 0 0 1px white;
+		    opacity:1;
+	    }
+	}
+}
+
+.clio-menu{
+	a.btn{
+		padding: 1.1rem 1.4rem;
+	}
+}
+
+
