@@ -196,20 +196,29 @@ $(function() {
         }); 
     }
 
-MktoForms2.whenReady(function (form) {
-		$("input:visible").focus(function() {
-		  $("label[for='" + this.id + "']").addClass("moveup");
+		MktoForms2.whenReady(function (form) {
+				$("input:visible").focus(function() {
+				  $("label[for='" + this.id + "']").addClass("moveup");
+				});
+				$('textarea:visible').focus(function() {
+					$("label[for='" + this.id + "']").css('font-size','12px');
+					$('#Comments__c').css('margin-top','26px');
+				});
 		});
-});
 
+		$('#mobile-nav').click(function() {
+			$('#Clio-Mobile-Menu').toggleClass('visible hidden');
+			$('.body').toggleClass('blur');
+			$('.close').toggleClass('hide show');
+			$('.bars').toggleClass('show hide');
+		});
 
-$("#SaDScroll, #SaDScrollBtn").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#mktoForm_1705").offset().top
-    }, 1000);
-});
+		$("#SaDScroll, #SaDScrollBtn").click(function() {
+		    $('html, body').animate({
+		        scrollTop: $("#mktoForm_1705").offset().top
+		    }, 1000);
+		});
 
-	
 
 });
 
