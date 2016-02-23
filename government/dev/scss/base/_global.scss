@@ -1,7 +1,8 @@
 // Breakpoints
 $tablet: new-breakpoint(max-width 1024px);
 $mobile: new-breakpoint(max-width 736px);
-
+$header: new-breakpoint(max-width 1024px);
+$small: new-breakpoint(max-width 330px);
 // Containers
 *{
 	@include box-sizing(border-box);
@@ -9,13 +10,98 @@ $mobile: new-breakpoint(max-width 736px);
 hr {
 	border: 1px solid #ECEDEE;
 }
+
+// MOBILE MENU 
+
+#mobile-nav {
+	display: none;
+	color: $white;
+	right: 0;
+	position: absolute;
+	z-index: 30;
+	padding: 52px 20px 0 0;
+	font-size: 25px;
+	cursor: pointer;
+	user-select: none;
+	@include media($mobile) {
+		display: initial;
+		cursor: pointer;
+	}
+	.hide {
+	display: none;
+	}
+	.show {
+		display: initial;
+	}
+	.rotator {
+	  height: 27px;
+	  width: 23px;
+	  transition-duration: 0.5s;
+	  &:active {
+	  	transform: rotate(365deg);
+	  }
+	}
+}
+
+#Clio-Mobile-Menu {
+	float: right;
+  position: fixed;
+  background-color: rgba(59,65,69,0.5);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.4s cubic-bezier(0.25, 0.1, 0.38, 1.01);
+  z-index:10;
+  .clio-mobile {
+  	margin: 7em auto;
+    width: 100%;
+    text-align: center;
+  	li {
+  		padding-bottom: 2em;
+  		font-size: 1.2rem;
+  		a {
+  			color: $white;
+  		}
+  		a.btn.btn--ghost-white:hover {
+  			color: $primary;
+  		}
+  	}
+  }
+}
+.hidden {
+	background-color: transparent;
+	visibility: hidden;
+	opacity: 0;
+}
+.visible {
+	 visibility: visible;
+	 background-color: rgba(59,65,69,0.5);
+	 opacity:1;
+}
+.body {
+	z-index: 0;
+}
+.blur {
+		-webkit-filter: blur(13px);
+		box-shadow: 2px 0px 64px 17px rgba(0,0,0,0.75);
+}
+
+// HEADER 
+
+.gradient {
+	background: linear-gradient(to bottom, rgba(26,98,143,1) 4%,rgba(149,178,186,1) 62%,rgba(255,247,224,1) 100%);
+	margin-bottom: 10em;
+	@include media ($mobile) {
+		background: linear-gradient(to bottom, rgba(26,98,143,1) 4%,rgba(149,178,186,1) 79%,rgba(255,247,224,1) 100%);
+		margin-bottom: 8em;
+	}
+}
 header{
 	width: 100%;
-	background: $primary;
 	padding: 29px 0;
 	.branding{
 		@include outer-container;
-		padding: 0px 20px 10px 20px;
+		padding: 20px 20px 10px 20px;
 		@include media($mobile) {
 			padding: 0px 20px 10px 20px;
 			margin-bottom: 1.5rem;
@@ -23,7 +109,7 @@ header{
 		figure.logo{
 			float: left;
 		}
-		ul.clio-menu{
+		ul.clio-menu {
 			color: $white;
 			float: right;
 			text-align: right;
@@ -32,7 +118,7 @@ header{
 			list-style-type: none;
 			@include media($mobile) {
 				display: none;
-	    	}
+	    }
 	    li {
 	    	display: inline-block;
 	    	padding-right: 14px;
@@ -43,52 +129,56 @@ header{
 		}
 	}
 }
-
-.container {
-	@include outer-container;
-	margin: 1em auto;
-	padding: 4em auto;
-}
-
 .hero {
-		 background-color: $primary;
-	}
+	height: 487px;
+	@include media($header) {
+  	height: auto !important;
+  }
 	.hero-title{
 		text-align: center;
-		background-color: $dark-primary;
-		max-width: none!important;
+		max-width: none !important;
 		@include outer-container;
-		padding: 60px 20px;
+		padding: 0 20px;
+		margin-bottom: 2em;
 		@include media($mobile) {
-			padding: 40px 20px;
+			padding: 0 20px;
 	    }
-		h1{
-			color: $white;
-			@include media($mobile) {
-				@include font-size(36);
-	    	}
-		}
-
-	}
-	.hero-text {
-		max-width: 780px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: $dark-primary;
-		p {
-			color: $white;
-		}
-		.btn {
-			margin-top: 1em;
+		.hero-text {
+			max-width: 780px;
+			margin-left: auto;
+			margin-right: auto;
+			h1 {
+				color: $white;
+				@include media($mobile) {
+					@include font-size(34);
+		    }
+			}
+			p {
+				color: $white;
+			}
+			.btn {
+				margin-top: 1em;
+			}
 		}
 	}
 	.hero-image {
-		text-align: center;
-		img {
-			max-width: 100%;
-		}
+		background: url("http://localhost/landing-page/government/dist/assets/img/government-2.png") no-repeat top center;
+	  height: 100%;
+	  @include media($header) {
+	  	height: 270px;
+	  }
+	  @include media($mobile) {
+	  	margin-bottom: -3em;
+	  }
+	  @include media($small) {
+	  	background: url("http://localhost/landing-page/government/dist/assets/img/government-mobile-small.png") no-repeat top center;
+	  	margin-bottom: -6em;
+   		height: 240px;
+	  }
 	}
+}
 
+// ABOUT SECTION x 6
 article {
 	@include fill-parent();
 	h1 {
@@ -122,174 +212,9 @@ article {
 	}
 }
 
-.footer-cta {
-	@include fill-parent();
-	background-color: $primary;
-	text-align: center;
-	padding: 3em;
-	h3, p {
-		color: $white;
-		margin-bottom: 0.5rem;
-	}
-	@include media ($mobile) {
-		h3 {
-			line-height: 1.3;
-		}
-	}
-}
-// BUTTONS
 
-a.btn {
-    display: inline-block;
-    vertical-align: middle;
-    font-family: inherit; 
-    font-weight: normal;
-    cursor: pointer;
-    border: none; 
-    padding-top: 0;
-    padding-bottom: 0; 
-    padding: 1.1rem 2.5rem;
-    font-size: 15px;
-    border-radius: 4px;
-    // Half circle rounded borders
-    text-decoration: none;
-    text-align: center;
-    background: transparent;
-    transiton: 1s ease;
-    background-color: transparent;
-}
-a.btn.btn--ghost-white:hover {
-	background-color: $white;
-	color: $primary;
-	opacity: 1;
-}
-.btn--ghost-white { 
-    color: white;
-    box-shadow:inset 0 0 0 1px white;
-}
-a.btn.btn--ghost-grey:hover { 
-    background-color: $primary;
-    color: $white;
-    box-shadow:inset 0 0 0 1px white;
-    opacity:1;
-}
+// RESOURCE DOWNLOAD SECTION
 
-.btn--ghost-grey { 
-    color: $body-color;
-    box-shadow:inset 0 0 0 1px $body-color;
-}
-
-// FOOTER
-
-footer{
-	@include outer-container;
-	padding: 35px 30px 35px 30px;
-	@include font-size(14);
-	margin-bottom: 0;
-
-	@include media($tablet) {
-		max-width: 875px;
-	}
-	@include media($mobile) {
-		max-width: 480px;
-		border-top: 0;
-		padding-top:30px;
-	}
-	.copyright{
-		@include span-columns(7);
-		ul{
-		  	display: inline-block;
-
-			@include media($mobile){
-				// border-top: 1px solid $dark-gray;
-				// padding-top: 35px;
-			}
-			li{
-				float: left;
-				margin-right: 20px;
-				color: $dark-gray;
-				text-decoration: none;
-				line-height: 24px;
-
-				&:last-child{
-					@include omega();
-				}
-
-				@include media($mobile) {
-					float: none;
-
-				}
-
-				a{
-					color: $dark-gray;
-					text-decoration: none;
-					line-height: 24px;
-
-					&:hover{
-						color: $body-color;
-					}
-				}
-			}
-		}
-	}
-
-	.social{
-		@include span-columns(6);
-		@include omega();
-		text-align: right;
-		@include media($mobile){
-			text-align: left;
-		}
-		ul{
-			display: inline-block;
-			@include media($mobile){
-				// border-top: 1px solid $dark-gray;
-				// padding-top: 35px;
-			}
-			li{
-				float: left;
-				margin-right: 20px;
-				color: $dark-gray;
-				text-decoration: none;
-				line-height: 24px;
-
-				&:last-child{
-					@include omega();
-				}
-
-				@include media($mobile) {
-					float: none;
-				}
-
-				a{
-					color: $dark-gray;
-					text-decoration: none;
-					line-height: 24px;
-
-					&:hover{
-						color: $body-color;
-					}
-
-					i.fa-facebook-official{
-						color: $facebook;
-					}
-
-					i.fa-linkedin-square{
-						color: $linkedin;
-					}
-
-					i.fa-twitter{
-						color: $twitter;
-					}
-				}
-			}
-		}
-
-	}
-}
-
-
-// Resource Book Cover
 .whitepaper {
 	padding: 6em 0;
 	@include media($mobile) {
@@ -317,12 +242,16 @@ footer{
 	}
 }
 
+.container {
+	@include outer-container;
+	margin: 1em auto;
+	padding: 4em auto;
+}
 
 div.resource-cover{
 	position: relative;
 	width: 100%;
 	padding: 1px;
-
 	.bk-book {
 		background: $primary;
 		position: relative;
@@ -332,21 +261,17 @@ div.resource-cover{
 		-webkit-box-shadow: 4px 5px 21px -4px rgba(50, 50, 50, 0.48);
 		-moz-box-shadow: 4px 5px 21px -4px rgba(50, 50, 50, 0.48);
 		box-shadow: 4px 5px 21px -4px rgba(50, 50, 50, 0.48);
-
 		.bk-left{
 			display: none;
 		}
-
 		.bk-front {
 			background: $primary;
 			width: 200px;
 			height: 260px;
 			z-index: 10;
-
 			div{
 				border-radius: 0 3px 3px 0;
 			}
-
 			& > div{
 				display: block;
 				position: absolute;
@@ -354,7 +279,6 @@ div.resource-cover{
 				height: 260px;
 				background-color: $primary;
 			}
-
 			&:after{
 				content: '';
 				position: absolute;
@@ -365,7 +289,6 @@ div.resource-cover{
 				background-color: $primary;
 			}
 		}
-
 		.bk-cover {
 			width: 200px;
 			height: 260px;
@@ -374,23 +297,19 @@ div.resource-cover{
 			color: $white;
 			padding: 24px 24px 10px 24px;
 			position: relative;
-
 			span{
 				display: block;
 			}
-
 			span.type{
 				@include font-size(14);
 				font-family: 'GibsonRegular', $helvetica;
 				font-weight: 300;
 				margin-bottom: 24px;
 			}
-
 			span.title{
 				@include font-size(20);
 				font-family: 'Merriweather', $georgia;
 			}
-
 			span.footer{
 				@include font-size(10);
 				font-family: 'GibsonRegular', $helvetica;
@@ -403,9 +322,7 @@ div.resource-cover{
 				width: 75%;
 				padding-top: 10px;
 			}
-
 		}
-
 		@include media($mobile) {
 			width: 180px;
   		height: 215px;
@@ -414,41 +331,38 @@ div.resource-cover{
   		.bk-front{
   			width: 180px;
   			height: 215px;
-
   			.bk-cover{
   				width: 180px;
   				height: 215px;
   				padding: 12px;
-
-				span.type{
-					@include font-size(12);
-					font-family: 'GibsonRegular', $helvetica;
-					font-weight: 300;
-					margin-bottom: 12px;
-				}
-				span.title{
-					@include font-size(15);
-					font-family: 'Merriweather', $georgia;
-				}
-				span.footer{
-					@include font-size(10);
-					font-family: 'GibsonRegular', $helvetica;
-					text-transform: uppercase;
-					position: absolute;
-					margin-bottom: 0;
-					bottom: 10px;
-					left: 12px;
-					border-top: 2px solid $white;
-					width: 75%;
-					padding-top: 10px;
-				}
+					span.type{
+						@include font-size(12);
+						font-family: 'GibsonRegular', $helvetica;
+						font-weight: 300;
+						margin-bottom: 12px;
+					}
+					span.title{
+						@include font-size(15);
+						font-family: 'Merriweather', $georgia;
+					}
+					span.footer{
+						@include font-size(10);
+						font-family: 'GibsonRegular', $helvetica;
+						text-transform: uppercase;
+						position: absolute;
+						margin-bottom: 0;
+						bottom: 10px;
+						left: 12px;
+						border-top: 2px solid $white;
+						width: 75%;
+						padding-top: 10px;
+					}
   			}
   		}
-
 		}
-
 	}
 }
+
 
 // FORM
 
@@ -467,6 +381,7 @@ div.resource-cover{
 		}
 		form {
 			text-align: center;
+			max-width: 350px  !important;
 			@include media($mobile){
 				padding: 30px;
 			}
@@ -489,6 +404,7 @@ div.resource-cover{
 				border: 1px solid $dark-gray;
 				font-size: 16px;
 				margin-top: 36px;
+				transition: 0.5s cubic-bezier(0.63, 0.01, 0.16, 0.88);
 			}
 			textarea:focus { 
 				outline: none;
@@ -505,7 +421,7 @@ div.resource-cover{
 				border: 1px solid $dark-gray;
 			}
 			label[for=Comments__c].moveup {
-			  padding-left:0px!important;
+			  padding-left:0px !important;
 			}
 			label[for=CASL_Most_Recent_Opt_in__c].moveup {
 				top: 0;
@@ -518,7 +434,7 @@ div.resource-cover{
 				border-radius: 0;
 				border-bottom: 1px solid $dark-gray;
 				font-size: 16px;
-				padding-left:0!important;
+				padding-left:0 !important;
 			}
 			input:focus { 
 				outline: none;
@@ -530,7 +446,7 @@ div.resource-cover{
 			}
 			.mktoLabel {
 				top: 0;
-				transition: 0.5s cubic-bezier(0.63, 0.01, 0.16, 0.88);;
+				transition: 0.5s cubic-bezier(0.63, 0.01, 0.16, 0.88);
 			}
 			.mktoInvalid {
 				border: 0;
@@ -556,10 +472,161 @@ div.resource-cover{
 				transition: opacity 0.2s ease-in-out;
 			}
 			button.mktoButton[type=submit]:hover {
-				background: #005588;
-				color: $white;
+				opacity: 0.8;
+    		filter: alpha(opacity=80);
 				transition: opacity 0.2s ease-in-out;
 			}
+		}
 	}
 }
+
+// FOOTER
+
+footer{
+	@include outer-container;
+	padding: 35px 30px 35px 30px;
+	@include font-size(14);
+	margin-bottom: 0;
+	@include media($tablet) {
+		max-width: 875px;
+	}
+	@include media($mobile) {
+		max-width: 480px;
+		border-top: 0;
+		padding-top:30px;
+	}
+	.copyright{
+		@include span-columns(7);
+		ul{
+		  	display: inline-block;
+			@include media($mobile){
+			}
+			li{
+				float: left;
+				margin-right: 20px;
+				color: $dark-gray;
+				text-decoration: none;
+				line-height: 24px;
+				&:last-child{
+					@include omega();
+				}
+				@include media($mobile) {
+					float: none;
+				}
+				a{
+					color: $dark-gray;
+					text-decoration: none;
+					line-height: 24px;
+					&:hover{
+						color: $body-color;
+					}
+				}
+			}
+		}
+	}
+	.social{
+		@include span-columns(6);
+		@include omega();
+		text-align: right;
+		@include media($mobile){
+			text-align: left;
+		}
+		ul{
+			display: inline-block;
+			@include media($mobile){
+			}
+			li{
+				float: left;
+				margin-right: 20px;
+				color: $dark-gray;
+				text-decoration: none;
+				line-height: 24px;
+				&:last-child{
+					@include omega();
+				}
+				@include media($mobile) {
+					float: none;
+				}
+				a{
+					color: $dark-gray;
+					text-decoration: none;
+					line-height: 24px;
+					&:hover{
+						color: $body-color;
+					}
+					i.fa-facebook-official{
+						color: $facebook;
+					}
+					i.fa-linkedin-square{
+						color: $linkedin;
+					}
+					i.fa-twitter{
+						color: $twitter;
+					}
+				}
+			}
+		}
+	}
+}
+.footer-cta {
+	@include fill-parent();
+	background-color: $primary;
+	text-align: center;
+	padding: 3em;
+	h3, p {
+		color: $white;
+		margin-bottom: 0.5rem;
+	}
+	@include media ($mobile) {
+		h3 {
+			line-height: 1.3;
+		}
+	}
+}
+
+// BUTTONS
+
+a.btn {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit; 
+  font-weight: normal;
+  cursor: pointer;
+  border: none; 
+  padding-top: 0;
+  padding-bottom: 0; 
+  padding: 1.1rem 2.5rem;
+  font-size: 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  background: transparent;
+  transiton: 1s ease;
+  background-color: transparent;
+}
+a.btn.btn--ghost-white:hover {
+	background-color: $white;
+	color: $primary;
+	opacity: 1;
+}
+.btn--ghost-white { 
+  color: white;
+  box-shadow:inset 0 0 0 1px white;
+}
+.small {
+	font-size: 13px !important;
+  padding: 0.8rem 1.4rem !important;
+}
+a.btn.btn--ghost-grey:hover { 
+    background-color: $primary;
+    color: $white;
+    box-shadow:inset 0 0 0 1px white;
+    opacity:1;
+}
+.btn--ghost-grey { 
+  color: $body-color;
+  box-shadow:inset 0 0 0 1px $body-color;
+  @include media($mobile) {
+  	margin-top: 1em;
+	}	
 }
