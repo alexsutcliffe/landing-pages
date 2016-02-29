@@ -17,6 +17,10 @@ header{
 	position: relative;
 	z-index: 2;
 
+	@include media($mobile) {
+		padding-top: 10px;
+	}
+
 	.container{
 		padding: 0;
 	}
@@ -33,7 +37,7 @@ header{
 
 			img{
 				@include media($mobile) {
-					width: 90%;
+					width: 85%;
     				height: auto !important;
 				}
 			}
@@ -71,7 +75,7 @@ header{
 		height: 700px;
 		position: relative;
 		overflow: hidden;
-		background: url(http://files.goclio.com/marketo/library/lp/template/img/postclioday/shanita.jpg) no-repeat;
+		background: url(../video/video-poster.jpg) no-repeat;
 		background-size: cover;
 		.filter {
 		    position: absolute;
@@ -93,6 +97,10 @@ header{
 		    width: auto;
 		    height: auto;
 		    z-index: 0;
+
+		    @include media($mobile) {
+		    	display: none;
+		    }
 		}
 		a.play-button{
 			display: table;
@@ -456,7 +464,7 @@ div.resource-cover{
 			}
 
 			span.title{
-				@include font-size(20);
+				@include font-size(18);
 				font-family: 'Merriweather', $georgia;
 			}
 
