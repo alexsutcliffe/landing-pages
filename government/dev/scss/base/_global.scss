@@ -163,7 +163,7 @@ header{
 		}
 	}
 	.hero-image {
-		background: url("http://localhost/landing-page/government/dist/assets/img/government-2.png") no-repeat top center;
+		background: url("../img/government-2.png") no-repeat top center;
 	  height: 100%;
 	  @include media($header) {
 	  	height: 270px;
@@ -172,7 +172,7 @@ header{
 	  	margin-bottom: -3em;
 	  }
 	  @include media($small) {
-	  	background: url("http://localhost/landing-page/government/dist/assets/img/government-mobile-small.png") no-repeat top center;
+	  	background: url("../img/government-mobile-small.png") no-repeat top center;
 	  	margin-bottom: -6em;
    		height: 240px;
 	  }
