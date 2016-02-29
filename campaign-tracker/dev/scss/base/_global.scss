@@ -1,0 +1,714 @@
+// Breakpoints
+$tablet: new-breakpoint(max-width 1024px);
+$mobile: new-breakpoint(max-width 736px);
+
+// Containers
+*{
+	@include box-sizing(border-box);
+}
+hr {
+	border: 1px solid #ECEDEE;
+}
+header{
+	width: 100%;
+	background: none;
+	padding: 29px 0;
+	padding-top: 45px;
+	position: relative;
+	z-index: 2;
+
+	.container{
+		padding: 0;
+	}
+
+	.branding{
+		@include outer-container;
+		padding: 0px 20px 10px 20px;
+		@include media($mobile) {
+			padding: 0px 20px 10px 20px;
+			margin-bottom: 1.5rem;
+		}
+		figure.logo{
+			float: left;
+
+			img{
+				@include media($mobile) {
+					width: 90%;
+    				height: auto !important;
+				}
+			}
+			
+		}
+		ul.clio-menu{
+			color: $white;
+			float: right;
+			text-align: right;
+			padding-top: 8px;
+			display: inline-block;
+			list-style-type: none;
+			@include media($mobile) {
+				display: none;
+	    	}
+	    li {
+	    	display: inline-block;
+	    	padding-right: 14px;
+	    	a {
+	    		color: $white;
+	    	}
+	    }
+		}
+	}
+}
+
+.container {
+	@include outer-container;
+	margin: 1em auto;
+	padding: 4em 0;
+}
+
+.hero {
+		background-color: $mid-gray;
+		height: 700px;
+		position: relative;
+		overflow: hidden;
+		background: url(http://files.goclio.com/marketo/library/lp/template/img/postclioday/shanita.jpg) no-repeat;
+		background-size: cover;
+		.filter {
+		    position: absolute;
+		    z-index: 1;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: #000;
+		    opacity: 0.4;
+		}
+
+		video#bgvid {
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		    min-width: 100%;
+		    min-height: 700px;
+		    width: auto;
+		    height: auto;
+		    z-index: 0;
+		}
+		a.play-button{
+			display: table;
+		    width: 90px;
+		    height: 80px;
+		    margin: 0 auto;
+		    text-align: center;
+		    background: url("../img/play.png") no-repeat top center;
+		    position: relative;
+		    z-index: 2;
+		    span{
+		    	display: table-cell;
+		    	vertical-align: bottom;
+    			color: #fff;
+		    }
+		}
+	}
+	.hero-title{
+		text-align: center;
+		background-color: none;
+		@include outer-container;
+		padding: 60px 20px;
+		z-index: 2;
+		position: relative;
+
+		@include media($mobile) {
+			padding: 40px 20px;
+	    }
+
+		h1{
+			color: $white;
+			@include media($mobile) {
+				@include font-size(36);
+	    	}
+		}
+
+		.hero-text {
+			max-width: 666px; 
+			margin-left: auto;
+			margin-right: auto;
+			background-color: none;
+			p {
+				color: $white;
+			}
+			.btn {
+				margin-top: 1em;
+			}
+		}
+
+	}
+
+article {
+	@include fill-parent();
+	h1 {
+		text-align: center;
+    margin: 2em 0 1em 0;
+    font-size: 2.4em;
+	}
+	[class^="icon-"] {
+		font-size: 2.5em;
+    display: inline-block;
+    float: left;
+    padding-right: 0.3em;
+    @include media($mobile) {
+    	float: none;
+    }
+	}
+	.half {
+		@include span-columns(5);
+		@include shift(1);
+		padding: 0;
+		
+		@include media($mobile) {
+		  	@include span-columns(12 of 12);
+		  	@include shift(0);
+		  	padding-left:1em;
+		  	padding-right:1em;
+				text-align: center;
+	  	}
+	  // h3 {
+	  // 	margin-bottom: 0.5rem;
+	  // }
+	}
+
+	&.workflow{
+		text-align: center;
+
+		.workflow-step-two-col{
+			@include clearfix();
+		}
+
+		.workflow-step{
+			text-align: center;
+			width: 100%;
+			max-width: 350px;
+			margin: 0 auto;
+			margin-bottom: 50px;
+
+			h3{
+				margin-bottom: 13px;
+			}
+			.img-container{
+				width: 160px;
+				height: 135px;
+				line-height: 135px;
+				margin: 0 auto;
+				position: relative;
+				margin-bottom: 20px;
+
+				img{
+					vertical-align: bottom;
+				}
+
+				@include media($mobile){
+					height: auto;
+					line-height: 1;					
+				}
+			}
+		}
+
+		.workflow-arrow, .workflow-arrow-mobile{
+			margin-bottom: 50px;
+		}
+
+		.workflow-arrow-mobile{
+			display: none;
+		}
+
+		@include media($mobile){
+			.workflow-arrow{
+				display: none;
+			}
+			.workflow-arrow-mobile{
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.footer-cta {
+	@include fill-parent();
+	background-color: $primary;
+	text-align: center;
+	padding: 3em;
+	h3, p {
+		color: $white;
+		margin-bottom: 0.5rem;
+	}
+	@include media ($mobile) {
+		h3 {
+			line-height: 1.3;
+		}
+	}
+}
+
+// FOOTER
+
+footer{
+	@include outer-container;
+	padding: 35px 30px 35px 30px;
+	@include font-size(14);
+	margin-bottom: 0;
+
+	@include media($tablet) {
+		max-width: 875px;
+	}
+	@include media($mobile) {
+		max-width: 480px;
+		border-top: 0;
+		padding-top:30px;
+	}
+	.copyright{
+		@include span-columns(7);
+		ul{
+		  	display: inline-block;
+
+			@include media($mobile){
+				// border-top: 1px solid $dark-gray;
+				// padding-top: 35px;
+			}
+			li{
+				float: left;
+				margin-right: 20px;
+				color: $dark-gray;
+				text-decoration: none;
+				line-height: 24px;
+
+				&:last-child{
+					@include omega();
+				}
+
+				@include media($mobile) {
+					float: none;
+
+				}
+
+				a{
+					color: $dark-gray;
+					text-decoration: none;
+					line-height: 24px;
+
+					&:hover{
+						color: $body-color;
+					}
+				}
+			}
+		}
+	}
+
+	.social{
+		@include span-columns(6);
+		@include omega();
+		text-align: right;
+		@include media($mobile){
+			text-align: left;
+		}
+		ul{
+			display: inline-block;
+			@include media($mobile){
+				// border-top: 1px solid $dark-gray;
+				// padding-top: 35px;
+			}
+			li{
+				float: left;
+				margin-right: 20px;
+				color: $dark-gray;
+				text-decoration: none;
+				line-height: 24px;
+
+				&:last-child{
+					@include omega();
+				}
+
+				@include media($mobile) {
+					float: none;
+				}
+
+				a{
+					color: $dark-gray;
+					text-decoration: none;
+					line-height: 24px;
+
+					&:hover{
+						color: $body-color;
+					}
+
+					i.fa-facebook-official{
+						color: $facebook;
+					}
+
+					i.fa-linkedin-square{
+						color: $linkedin;
+					}
+
+					i.fa-twitter{
+						color: $twitter;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+// Resource Book Cover
+.whitepaper {
+	padding: 6em 0;
+	@include media($mobile) {
+		padding: 1em 0;
+	}
+	.half {
+		@include span-columns(5);
+		@include shift(1);
+		padding: 2em 0 3em 0;
+		@include media($mobile) {
+	  	@include span-columns(12 of 12);
+	  	@include shift(0);
+	  	padding-left:1em;
+	  	padding-right:1em;
+			text-align: center;
+	  }
+	  figure {
+	  	padding-top: 2em;
+	  }
+	}
+	.bk-desc {
+		@include media($mobile){
+			text-align:center;
+		}
+	}
+}
+
+
+div.resource-cover{
+	position: relative;
+	width: 100%;
+	padding: 1px;
+
+	.bk-book {
+		background: $primary;
+		position: relative;
+		width: 200px;
+		height: 260px;
+		margin: 0 auto;
+		-webkit-box-shadow: 4px 5px 21px -4px rgba(50, 50, 50, 0.48);
+		-moz-box-shadow: 4px 5px 21px -4px rgba(50, 50, 50, 0.48);
+		box-shadow: 4px 5px 21px -4px rgba(50, 50, 50, 0.48);
+
+		.bk-left{
+			display: none;
+		}
+
+		.bk-front {
+			background: $primary;
+			width: 200px;
+			height: 260px;
+			z-index: 10;
+
+			div{
+				border-radius: 0 3px 3px 0;
+			}
+
+			& > div{
+				display: block;
+				position: absolute;
+				width: 200px;
+				height: 260px;
+				background-color: $primary;
+			}
+
+			&:after{
+				content: '';
+				position: absolute;
+				top: 1px;
+				bottom: 1px;
+				left: -1px;
+				width: 1px;
+				background-color: $primary;
+			}
+		}
+
+		.bk-cover {
+			width: 200px;
+			height: 260px;
+			margin: 0 auto;
+			background: $primary;
+			color: $white;
+			padding: 24px 24px 10px 24px;
+			position: relative;
+
+			span{
+				display: block;
+			}
+
+			span.type{
+				@include font-size(14);
+				font-family: 'GibsonRegular', $helvetica;
+				font-weight: 300;
+				margin-bottom: 24px;
+			}
+
+			span.title{
+				@include font-size(20);
+				font-family: 'Merriweather', $georgia;
+			}
+
+			span.footer{
+				@include font-size(10);
+				font-family: 'GibsonRegular', $helvetica;
+				text-transform: uppercase;
+				position: absolute;
+				margin-bottom: 0;
+				bottom: 10px;
+				left: 24px;
+				border-top: 2px solid $white;
+				width: 75%;
+				padding-top: 10px;
+			}
+
+		}
+
+		@include media($mobile) {
+			width: 180px;
+  		height: 215px;
+  		margin-left: auto;
+  		margin-top: 0;
+  		.bk-front{
+  			width: 180px;
+  			height: 215px;
+
+  			.bk-cover{
+  				width: 180px;
+  				height: 215px;
+  				padding: 12px;
+
+				span.type{
+					@include font-size(12);
+					font-family: 'GibsonRegular', $helvetica;
+					font-weight: 300;
+					margin-bottom: 12px;
+				}
+				span.title{
+					@include font-size(15);
+					font-family: 'Merriweather', $georgia;
+				}
+				span.footer{
+					@include font-size(10);
+					font-family: 'GibsonRegular', $helvetica;
+					text-transform: uppercase;
+					position: absolute;
+					margin-bottom: 0;
+					bottom: 10px;
+					left: 12px;
+					border-top: 2px solid $white;
+					width: 75%;
+					padding-top: 10px;
+				}
+  			}
+  		}
+
+		}
+
+	}
+}
+
+// FORM
+
+.demo {
+	padding: 4em 0;
+	.form {
+		@include span-columns(6 of 12);
+		@include shift(3);
+		@include media($tablet){
+			@include span-columns(6);
+			@include shift(3);
+		}
+		@include media($mobile){
+			@include span-columns(12 of 12);
+			@include shift(0);
+		}
+		form {
+			max-width: 340px !important;
+			text-align: center;
+			@include media($mobile){
+				padding: 30px;
+			}
+			h2 {
+				padding-bottom:1em;
+			}
+			.mktoFormRow {
+				margin-bottom: 40px;
+			}
+			label {
+				font-size: 16px;
+				z-index: -1;
+				position: absolute;
+				color: #A8B2B8;
+			}
+			textarea {
+				background-color: transparent;
+				border-radius: 0;
+				color: $body-color;
+				border: 1px solid $dark-gray;
+				font-size: 16px;
+				margin-top: 36px;
+			}
+			textarea:focus { 
+				outline: none;
+			}
+			textarea:focus {
+				border: 1px solid $dark-gray;
+			}
+			textarea.mktoInvalid {
+				border: 0;
+				border: 1px solid $red;
+			}
+			textarea.mktoInvalid:focus {
+				border: 0;
+				border: 1px solid $dark-gray;
+			}
+			label[for=Comments__c].moveup {
+			  padding-left:0px!important;
+			}
+			label[for=CASL_Most_Recent_Opt_in__c].moveup {
+				top: 0;
+				font-size: 12px;
+			}
+			label[for=CASL_Most_Recent_Opt_in__c] {
+				font-size: 12px;
+			    padding-top: 5px;
+			    padding-left: 4px;
+			}
+			input {
+				background-color: transparent;
+				border: 0;
+				color: $body-color;
+				border-radius: 0;
+				border-bottom: 1px solid $dark-gray;
+				font-size: 16px;
+				padding-left:0!important;
+			}
+			input:focus { 
+				outline: none;
+				border-bottom: 1px solid;
+			}
+			input:focus {
+				border: 0;
+				border-bottom: 1px solid $dark-gray;
+			}
+			.mktoLabel {
+				top: 0;
+				transition: 0.5s cubic-bezier(0.63, 0.01, 0.16, 0.88);;
+			}
+			.mktoInvalid {
+				border: 0;
+				border-bottom: 1px solid $red;
+			}
+			.mktoInvalid:focus {
+				border: 0;
+				border-bottom: 1px solid $dark-gray;
+			}
+			.moveup {
+				top: -24px;
+		    font-size: 12px;
+		    transition: 0.5s cubic-bezier(0.63, 0.01, 0.16, 0.88);
+		    color: #A8B2B8;
+			}
+			button.mktoButton[type=submit] {
+				background: $primary;
+				border: none;
+				padding: 12px 40px;
+				border-radius: 4px;
+				color: $white;
+				font-size: 14px;
+				@include transition(all .3s ease-in-out);
+			}
+			button.mktoButton[type=submit]:hover {
+				color: $white;
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+// ===== TESTIMONIALS =====
+
+.testimonials{
+	text-align: center;
+
+	h2{
+		margin-bottom: 80px;
+	}
+
+	.testimonial{
+		@include span-columns(4 of 12); 
+		position: relative;
+		
+		@include media($mobile){
+			@include span-columns(11);
+			@include shift(1);
+
+			margin-bottom: 100px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+
+		.client-text{
+			position: relative;
+			width: 100%;
+			background-color: #f6f7f7;
+			padding: 25px;
+
+			p{
+				font-family: 'EB Garamond', $georgia;
+				@include font-size(16);
+				line-height: 1.7;
+				margin-bottom: 0;
+				color: $body-color;
+			}
+
+			&:before{
+				content: '';
+				width: 0; 
+				height: 0; 
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-bottom: 20px solid #f6f7f7;
+				-webkit-transform:rotate(360deg); // for a better anti-aliasing in webkit browser
+				font-size: 0;
+				line-height: 0;
+				position: absolute;
+				top: -18px;
+				left: 50%;
+				margin-left: -20px;
+			}
+		}
+
+		.client-name{
+			font-family: 'GibsonRegular', $helvetica;
+			@include font-size(16);
+			margin-bottom: 0;
+			color: $primary;
+		}
+
+		.client-title{
+			@include font-size(12);
+			margin-bottom: 0;
+			color: $body-color;
+			font-family: 'Open Sans', $helvetica;
+		}
+
+		.client-photo{
+			margin-top: 20px;
+			margin-bottom: 40px;
+		}
+	}
+}
