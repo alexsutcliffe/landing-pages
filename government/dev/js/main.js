@@ -207,8 +207,8 @@ $(function() {
 		});
 
 		$('#mobile-nav').click(function() {
-			$('#Clio-Mobile-Menu').toggleClass('visible hidden');
 			$('.body').toggleClass('blur');
+			$('#Clio-Mobile-Menu').toggleClass('visible hidden');
 			$('.close').toggleClass('hide show');
 			$('.bars').toggleClass('show hide');
 		});
