@@ -176,6 +176,20 @@ $(function() {
 		  $("label[for='" + this.id + "']").addClass("moveup");
 		});
 	});
+
+	$('#mobile-nav').click(function() {
+		$('.body').toggleClass('blur');
+		$('#Clio-Mobile-Menu').toggleClass('visible hidden');
+		$('.close').toggleClass('hide show');
+		$('.bars').toggleClass('show hide');
+	});
+
+	$('ul.clio-mobile li a').click(function() {
+		$('.body').toggleClass('blur');
+		$('#Clio-Mobile-Menu').toggleClass('visible hidden');
+		$('.close').toggleClass('hide show');
+		$('.bars').toggleClass('show hide');
+	});
 	
 	var startWistiaVideo = function(){
 		if ($('.wistia_embed').length > 0) {
@@ -206,6 +220,7 @@ $(function() {
 
 		_wq.push({ "_all": function(video) {
 	        if ($('.' + videoID).length > 0) {
+
 	        	var bgvid = document.getElementById("bgvid"); 
 	        	
 	        	var exitVideo = function(){
@@ -213,17 +228,25 @@ $(function() {
 	        	};
 
 	        	var playVideo = function(){
+	        		bgvid.pause();
+	        		video.play();
 	                video.popover.show(); 
-	                video.play();
-	                bgvid.pause();
 	        	};
 
-	            $('.play-button').click(playVideo);  
+	        	$('.play-button').click(function(e){
+	        		e.preventDefault();
+	        		playVideo();
+	        	});
+
 	            video.bind("end", function(){
 	            	video.popover.hide();
 	            	exitVideo();
 	            });
-	            video.bind("popoverhide", exitVideo);
+
+	            video.bind("popoverhide", function(){
+	            	exitVideo();
+	            });
+
 	        }
 	    }});
 	};
