@@ -57,7 +57,7 @@
   		height: 36px !important;
   		float: none !important;
   		&.mktoInvalid{
-  			border: 1px solid $red;
+  			border: 1px solid #888;
   			//background: #fff url(../img/icon-exclamation-mark.png) 98% 57% no-repeat;
   			//background-size: 6px;
   		}
@@ -93,7 +93,7 @@
 		font-size: 14px !important;
 
 		&.mktoInvalid{
-  			border: 1px solid $red;
+  			border: 1px solid #888;
   		}
 	}
 
@@ -139,9 +139,15 @@
 		}
 
 		.mktoErrorMsg{
+<<<<<<< HEAD
 				text-align: right;
     		font-size: 12px !important;
 				background: none !important;
+=======
+			text-align: right;
+    		font-size: 12px !important;
+			background: none !important;
+>>>>>>> upstream/master
 	  		border: none !important;
 	  		box-shadow: none !important;
 	  		text-shadow: none !important;

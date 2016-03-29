@@ -23,9 +23,6 @@ module.exports = function(grunt){
 			dist: { 
 				files: {	
 					'../dist/assets/js/main.js' : ['js/main.js'],
-					'../dist/assets/js/thankyou.js' : ['js/thankyou.js'],
-					'../dist/assets/js/webinar.js' : ['js/webinar.js'],
-					'../dist/assets/js/whitepaper.js' : ['js/whitepaper.js'],
 					'../dist/assets/js/mktutils.js' : ['js/mktutil/jquery-cookie.js', 'js/mktutil/mktutil_save.js', 'js/mktutil/mktutil_load.js', 'js/mktutil/mktutil.js']
 				}
 			} 

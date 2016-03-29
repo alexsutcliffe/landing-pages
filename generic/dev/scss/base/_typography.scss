@@ -118,6 +118,17 @@ p{
 	  	padding-left: 20px;
 	}
 }
+.main{
+	ol{
+		@include font-size(16);
+		li{
+			color: $body-color;
+			margin-bottom: 0;
+		}
+			list-style: decimal;
+	  	padding-left: 20px;
+	}
+}
 
 a{
 	color: $primary;

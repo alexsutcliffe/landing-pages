@@ -1,6 +1,8 @@
 // Breakpoints
 $tablet: new-breakpoint(max-width 1024px);
-$mobile: new-breakpoint(max-width 736px);
+$mobile: new-breakpoint(max-width 820px);
+$header: new-breakpoint(max-width 1024px);
+$small: new-breakpoint(max-width 330px);
 
 // Containers
 *{
@@ -9,6 +11,83 @@ $mobile: new-breakpoint(max-width 736px);
 hr {
 	border: 1px solid #ECEDEE;
 }
+
+// MOBILE MENU 
+
+#mobile-nav {
+	display: none;
+	color: $white;
+	right: 0;
+	position: absolute;
+	z-index: 30;
+	padding: 36px 20px 0 0;
+	font-size: 25px;
+	cursor: pointer;
+	user-select: none;
+	@include media($mobile) {
+		display: initial;
+		cursor: pointer;
+	}
+	.hide {
+	display: none;
+	}
+	.show {
+		display: initial;
+	}
+	.rotator {
+	  height: 27px;
+	  width: 23px;
+	  transition-duration: 0.5s;
+	  &:active {
+	  	transform: rotate(365deg);
+	  }
+	}
+}
+
+#Clio-Mobile-Menu {
+	float: right;
+  position: fixed;
+  background-color: rgba(59,65,69,0.5);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index:10;
+  .clio-mobile {
+  	margin: 7em auto;
+    width: 100%;
+    text-align: center;
+  	li {
+  		padding-bottom: 2em;
+  		font-size: 1.2rem;
+  		a {
+  			color: $white;
+  		}
+  		a.btn.btn--ghost-white:hover {
+  			color: $primary;
+  		}
+  	}
+  }
+}
+.hidden {
+	background-color: transparent;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0s cubic-bezier(0.25, 0.1, 0.38, 1.01);
+}
+.visible {
+	 visibility: visible;
+	 background-color: rgba(59,65,69,0.5);
+	 opacity: 1;
+	 transition: 0.8s cubic-bezier(0.25, 0.1, 0.38, 1.01);
+}
+.body {
+	z-index: 0;
+}
+.blur {
+		-webkit-filter: blur(13px);
+		box-shadow: 2px 0px 64px 17px rgba(0,0,0,0.75);
+}
+
 header{
 	width: 100%;
 	background: none;
@@ -47,7 +126,7 @@ header{
 			color: $white;
 			float: right;
 			text-align: right;
-			padding-top: 8px;
+			padding-top: 3px;
 			display: inline-block;
 			list-style-type: none;
 			@include media($mobile) {
@@ -85,7 +164,7 @@ header{
 		    width: 100%;
 		    height: 100%;
 		    background: #000;
-		    opacity: 0.4;
+		    opacity: 0.6;
 		}
 
 		video#bgvid {
@@ -118,6 +197,7 @@ header{
 		    }
 		}
 	}
+
 	.hero-title{
 		text-align: center;
 		background-color: none;
@@ -144,6 +224,7 @@ header{
 			background-color: none;
 			p {
 				color: $white;
+				font-size: 17px;
 			}
 			.btn {
 				margin-top: 1em;
@@ -152,21 +233,30 @@ header{
 
 	}
 
+.narrow-copy{
+    width: 90%;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 article {
+	padding: 0 1em;
+	 
 	@include fill-parent();
 	h1 {
 		text-align: center;
-    margin: 2em 0 1em 0;
-    font-size: 2.4em;
+    	margin: 2em 0 1em 0;
+    	font-size: 2.4em;
 	}
 	[class^="icon-"] {
 		font-size: 2.5em;
-    display: inline-block;
-    float: left;
-    padding-right: 0.3em;
-    @include media($mobile) {
-    	float: none;
-    }
+    	display: inline-block;
+    	float: left;
+    	padding-right: 0.3em;
+	    @include media($mobile) {
+	    	float: none;
+	    }
 	}
 	.half {
 		@include span-columns(5);
@@ -180,9 +270,6 @@ article {
 		  	padding-right:1em;
 				text-align: center;
 	  	}
-	  // h3 {
-	  // 	margin-bottom: 0.5rem;
-	  // }
 	}
 
 	&.workflow{
@@ -464,7 +551,8 @@ div.resource-cover{
 			}
 
 			span.title{
-				@include font-size(18);
+				@include font-size(21);
+				line-height: 1.2;
 				font-family: 'Merriweather', $georgia;
 			}
 
@@ -535,21 +623,22 @@ div.resource-cover{
 		@include span-columns(6 of 12);
 		@include shift(3);
 		@include media($tablet){
-			@include span-columns(6);
+			@include span-columns(6 of 12);
 			@include shift(3);
 		}
 		@include media($mobile){
 			@include span-columns(12 of 12);
 			@include shift(0);
 		}
+		text-align: center;
 		form {
-			max-width: 340px !important;
+			max-width: 450px !important;
 			text-align: center;
 			@include media($mobile){
 				padding: 30px;
 			}
-			h2 {
-				padding-bottom:1em;
+			p.form-copy{
+				padding-bottom: 2em;
 			}
 			.mktoFormRow {
 				margin-bottom: 40px;
@@ -576,7 +665,7 @@ div.resource-cover{
 			}
 			textarea.mktoInvalid {
 				border: 0;
-				border: 1px solid $red;
+				border: 1px solid $dark-gray;
 			}
 			textarea.mktoInvalid:focus {
 				border: 0;
@@ -617,7 +706,7 @@ div.resource-cover{
 			}
 			.mktoInvalid {
 				border: 0;
-				border-bottom: 1px solid $red;
+				border-bottom: 1px solid $dark-gray;
 			}
 			.mktoInvalid:focus {
 				border: 0;
@@ -641,6 +730,16 @@ div.resource-cover{
 			button.mktoButton[type=submit]:hover {
 				color: $white;
 				opacity: 0.8;
+			}
+		}
+
+		#thank-you{
+			display: none;
+			img{
+				margin-bottom: 30px;
+			}
+			h2{
+				margin-bottom: 35px;
 			}
 		}
 	}
